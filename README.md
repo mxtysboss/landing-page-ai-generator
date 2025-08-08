@@ -40,7 +40,7 @@ Projekt składa się z trzech głównych części:
 ## Technologie
 
 - Node.js / Express (backend)
-- React / Vue / Angular (frontend) — dopasuj do swojego stacku
+- React / Vite / TypeScript
 - AI API (np. OpenAI GPT) do generowania treści
 
 ---
@@ -77,17 +77,17 @@ Projekt składa się z trzech głównych części:
 
     ```bash
     cd backend
-    npm start
+    node index.js
     ```
 
 2. Uruchom frontend:
 
     ```bash
     cd frontend
-    npm start
+    npm run dev
     ```
 
-3. Otwórz przeglądarkę i przejdź do `http://localhost:3000`
+3. Otwórz przeglądarkę i przejdź do `http://localhost:5173`
 
 ---
 
