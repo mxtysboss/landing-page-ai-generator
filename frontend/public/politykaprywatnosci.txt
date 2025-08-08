@@ -1,0 +1,24 @@
+Polityka Prywatności
+
+1. Informacje ogólne
+Niniejsza polityka określa zasady przetwarzania i ochrony danych osobowych użytkowników serwisu LandingGen.
+
+2. Administrator danych
+Administratorem danych jest Trakz.
+
+3. Cele przetwarzania danych
+Dane zbierane są w celu umożliwienia korzystania z serwisu, realizacji usług, obsługi konta oraz zapewnienia bezpieczeństwa.
+
+4. Zakres zbieranych danych
+Podstawowe dane: email, hasło (zaszyfrowane), zgoda na politykę prywatności.
+
+5. Prawa użytkownika
+Użytkownik ma prawo do dostępu, poprawiania, usunięcia swoich danych oraz do cofnięcia zgody na przetwarzanie danych.
+
+6. Cookies
+Serwis używa plików cookies do poprawy jakości usług. Akceptacja cookies jest dobrowolna, ale niezbędna do korzystania z niektórych funkcji serwisu.
+
+7. Kontakt
+W przypadku pytań dotyczących polityki prywatności prosimy o kontakt pod adresem: kontakt@twojadomena.pl
+
+Data ostatniej aktualizacji: 2025-08-08

@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Dark Landing Page Generator Design System */
+
+@layer base {
+  :root {
+    /* Dark theme base colors */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* Surface colors with glassmorphism */
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --glass: 222 84% 4.9% / 0.1;
+    --glass-border: 210 40% 98% / 0.1;
+
+    /* Brand colors - electric blue to purple gradient */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 4.9%;
+    --primary-glow: 217 91% 70%;
+    
+    --secondary: 271 81% 56%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 271 81% 66%;
+
+    /* Accent colors */
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+    --accent-glow: 142 76% 46%;
+
+    /* UI colors */
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(271 81% 56%));
+    --gradient-secondary: linear-gradient(135deg, hsl(271 81% 56%), hsl(142 76% 36%));
+    --gradient-background: linear-gradient(180deg, hsl(222 84% 4.9%), hsl(222 84% 3%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(217 91% 60% / 0.1), transparent 70%);
+
+    /* Shadows and glows */
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    --shadow-glass: 0 8px 32px hsl(222 84% 4.9% / 0.3);
+    --shadow-elevation: 0 20px 40px hsl(222 84% 4.9% / 0.4);
+
+    /* Animation timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-background);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply backdrop-blur-xl border rounded-xl;
+    background: hsl(var(--glass));
+    border-color: hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Hero button variant */
+  .btn-hero {
+    @apply relative overflow-hidden rounded-xl px-8 py-4 font-semibold transition-all duration-300;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-hero:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-elevation);
+  }
+
+  .btn-hero:active {
+    @apply scale-95;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply glass-card px-6 py-3 font-medium transition-all duration-300 hover:scale-105;
+    color: hsl(var(--foreground));
+  }
+
+  /* Input styling */
+  .input-glass {
+    @apply glass-card px-4 py-3 bg-transparent placeholder:text-muted-foreground focus:ring-2 focus:ring-primary transition-all duration-300;
+    border-color: hsl(var(--glass-border));
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect */
+  .glow {
+    position: relative;
+  }
+
+  .glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+  .glow:hover::before {
+    opacity: 0.7;
+  }
+
+  /* Loading animation */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-muted border-t-primary;
+  }
+
+  /* Minimal buttons for navigation */
+  .btn-minimal {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border;
+    padding: 0.5rem 0.75rem; /* px-3 py-2 but via raw CSS to keep precision */
+    border-color: hsl(var(--glass-border));
+    color: hsl(var(--foreground));
+    background: transparent;
+  }
+
+  .btn-minimal:hover {
+    background: hsl(var(--glass));
+    border-color: hsl(var(--ring));
+  }
+
+  .btn-minimal-cta {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-semibold transition-opacity;
+    padding: 0.5rem 0.75rem;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-minimal-cta:hover { opacity: 0.95; }
+
+  /* Avatar badge */
+  .avatar-badge {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-primary text-foreground font-semibold select-none;
+    width: 2.25rem; /* 36px */
+    height: 2.25rem; /* 36px */
+  }
+
+  .avatar-badge:hover {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
