@@ -67,7 +67,6 @@ Projekt składa się z trzech głównych części:
 
     ```env
     API_KEY=twoj_klucz_api
-    PORT=5000
     ```
 
 ---
