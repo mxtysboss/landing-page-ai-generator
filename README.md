@@ -94,10 +94,15 @@ Projekt składa się z trzech głównych części:
 ## Struktura projektu
 
 landing-page-ai-generator/
+
 ├── backend/ # Serwer i logika backendowa
+
 ├── frontend/ # Aplikacja frontendowa
+
 ├── output/ # Wygenerowane landing page (ignorowane w git)
+
 ├── .gitignore # Plik ignorujący output i .env
+
 └── README.md # Ten plik
 
 
